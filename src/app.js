@@ -3,14 +3,12 @@
 const numberOfFilms = +prompt('How many movies have you watched?');
 
 const personalMovieDB = {
-  count: 0,
+  count: numberOfFilms,
   movies: {},
   actors: {},
   genres: [],
   private: false,
 };
-
-personalMovieDB.count = numberOfFilms;
 
 const firstQuestionLastFilm = prompt('What the last movie have you watched?');
 const firstQuestionRateFilm = prompt('How do you rate this film?');
