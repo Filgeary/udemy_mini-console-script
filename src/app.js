@@ -23,4 +23,14 @@
 
 Проверить, чтобы все работало без ошибок в консоли */
 
-const numberOfFilms = prompt('How many movies have you watched?');
+const numberOfFilms = +prompt('How many movies have you watched?');
+
+const personalMovieDB = {
+  count: 0,
+  movies: {},
+  actors: {},
+  genres: [],
+  private: false,
+};
+
+personalMovieDB.count = numberOfFilms;
