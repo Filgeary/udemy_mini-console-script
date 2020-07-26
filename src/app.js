@@ -18,5 +18,3 @@ const secondQuestionRateFilm = prompt('How do you rate this film?');
 
 personalMovieDB.movies[firstQuestionLastFilm] = firstQuestionRateFilm;
 personalMovieDB.movies[secondQuestionLastFilm] = secondQuestionRateFilm;
-
-console.log(personalMovieDB);
