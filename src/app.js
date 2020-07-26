@@ -23,3 +23,4 @@
 
 Проверить, чтобы все работало без ошибок в консоли */
 
+const numberOfFilms = prompt('How many movies have you watched?');
