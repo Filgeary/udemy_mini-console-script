@@ -10,11 +10,11 @@ const personalMovieDB = {
   private: false,
 };
 
-const firstQuestionLastFilm = prompt('What the last movie have you watched?');
-const firstQuestionRateFilm = prompt('How do you rate this film?');
+const firstAnswerLastFilm = prompt('What the last movie have you watched?');
+const firstAnswerRateFilm = prompt('How do you rate this film?');
 
-const secondQuestionLastFilm = prompt('What the last movie have you watched?');
-const secondQuestionRateFilm = prompt('How do you rate this film?');
+const secondAnswerLastFilm = prompt('What the last movie have you watched?');
+const secondAnswerRateFilm = prompt('How do you rate this film?');
 
-personalMovieDB.movies[firstQuestionLastFilm] = firstQuestionRateFilm;
-personalMovieDB.movies[secondQuestionLastFilm] = secondQuestionRateFilm;
+personalMovieDB.movies[firstAnswerLastFilm] = firstAnswerRateFilm;
+personalMovieDB.movies[secondAnswerLastFilm] = secondAnswerRateFilm;
