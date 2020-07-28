@@ -1,6 +1,6 @@
 'use strict';
 
-const numberOfFilms = +prompt('How many movies have you watched?');
+const numberOfFilms = +prompt(`How many movies have you watched?`);
 
 const personalMovieDB = {
   count: numberOfFilms,
@@ -10,11 +10,50 @@ const personalMovieDB = {
   private: false,
 };
 
-const firstAnswerLastFilm = prompt('What the last movie have you watched?');
-const firstAnswerRateFilm = prompt('How do you rate this film?');
+start: for (let i = 1; i <= 3; i++) {
+  let answerLastFilm = prompt(
+    `Question 1.${i} \nWhat the last movie have you watched?`
+  );
+  let tryCount = 1;
 
-const secondAnswerLastFilm = prompt('What the last movie have you watched?');
-const secondAnswerRateFilm = prompt('How do you rate this film?');
+  while (!answerLastFilm || answerLastFilm.length > 50) {
+    answerLastFilm = prompt(
+      `Please, fill out this field correctly! \n${tryCount} Try of 3 \nWhat the last movie have you watched?`
+    );
+    tryCount++;
 
-personalMovieDB.movies[firstAnswerLastFilm] = firstAnswerRateFilm;
-personalMovieDB.movies[secondAnswerLastFilm] = secondAnswerRateFilm;
+    if (tryCount > 3) {
+      alert(`Please, fill out fields correctly!`);
+      break start;
+    }
+  }
+
+  let answerRateFilm = +prompt(`Question 2.${i} \nHow do you rate this film?`);
+  tryCount = 1;
+
+  while (!answerRateFilm) {
+    answerRateFilm = +prompt(
+      `Please, fill out this field correctly! \n${tryCount} Try of 3 \nHow do you rate this film?`
+    );
+    tryCount++;
+
+    if (tryCount > 3) {
+      alert(`Please, fill out fields correctly!`);
+      break start;
+    }
+  }
+
+  personalMovieDB.movies[answerLastFilm] = answerRateFilm;
+}
+
+if (personalMovieDB.count < 10) {
+  alert(`You watched so few movies`);
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+  alert(`You are ordinary person`);
+} else if (personalMovieDB.count > 30) {
+  alert(`You are a movie lover!`);
+} else {
+  alert(`ERROR`);
+}
+
+console.log(personalMovieDB);
