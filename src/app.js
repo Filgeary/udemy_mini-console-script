@@ -24,7 +24,11 @@ const personalMovieDB = {
   private: false,
 };
 
-const answerLastFilm = prompt('What the last movie have you watched?');
-const answerRateFilm = prompt('How do you rate this film?');
+for (let i = 0; i < 3; i++) {
+  let answerLastFilm = prompt('What the last movie have you watched?');
+  let answerRateFilm = prompt('How do you rate this film?');
 
-personalMovieDB.movies[answerLastFilm] = answerRateFilm;
+  personalMovieDB.movies[answerLastFilm] = answerRateFilm;
+}
+
+console.log(personalMovieDB);
