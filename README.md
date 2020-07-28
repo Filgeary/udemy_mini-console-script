@@ -1,3 +1,3 @@
 # training-project
 
-> JavaScript tasks & exercises
+> JavaScript tasks & exercises by tags
