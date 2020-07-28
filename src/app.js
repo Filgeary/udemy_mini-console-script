@@ -43,4 +43,14 @@ start: for (let i = 0; i < 3; i++) {
   personalMovieDB.movies[answerLastFilm] = answerRateFilm;
 }
 
+if (personalMovieDB.count < 10) {
+  alert(`You watched so few movies`);
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+  alert(`You are ordinary person`);
+} else if (personalMovieDB.count > 30) {
+  alert(`You are a movie lover!`);
+} else {
+  alert(`ERROR`);
+}
+
 console.log(personalMovieDB);
