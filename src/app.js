@@ -10,8 +10,10 @@ const personalMovieDB = {
   private: false,
 };
 
-start: for (let i = 0; i < 3; i++) {
-  let answerLastFilm = prompt(`What the last movie have you watched?`);
+start: for (let i = 1; i <= 3; i++) {
+  let answerLastFilm = prompt(
+    `Question 1.${i} \nWhat the last movie have you watched?`
+  );
   let tryCount = 1;
 
   while (!answerLastFilm || answerLastFilm.length > 50) {
@@ -26,7 +28,7 @@ start: for (let i = 0; i < 3; i++) {
     }
   }
 
-  let answerRateFilm = +prompt(`How do you rate this film?`);
+  let answerRateFilm = +prompt(`Question 2.${i} \nHow do you rate this film?`);
   tryCount = 1;
 
   while (!answerRateFilm) {
