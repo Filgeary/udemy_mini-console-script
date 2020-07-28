@@ -1,6 +1,6 @@
 'use strict';
 
-const numberOfFilms = +prompt('How many movies have you watched?');
+const numberOfFilms = +prompt(`How many movies have you watched?`);
 
 const personalMovieDB = {
   count: numberOfFilms,
@@ -11,11 +11,11 @@ const personalMovieDB = {
 };
 
 start: for (let i = 0; i < 3; i++) {
-  let answerLastFilm = prompt('What the last movie have you watched?');
+  let answerLastFilm = prompt(`What the last movie have you watched?`);
   let count = 0;
 
   while (!answerLastFilm || answerLastFilm.length > 50) {
-    answerLastFilm = prompt('Repeat: What the last movie have you watched?');
+    answerLastFilm = prompt(`Repeat: What the last movie have you watched?`);
     count++;
 
     if (count >= 3) {
@@ -24,7 +24,7 @@ start: for (let i = 0; i < 3; i++) {
     }
   }
 
-  let answerRateFilm = prompt('How do you rate this film?');
+  let answerRateFilm = prompt(`How do you rate this film?`);
 
   personalMovieDB.movies[answerLastFilm] = answerRateFilm;
 }
