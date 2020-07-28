@@ -12,19 +12,21 @@ const personalMovieDB = {
 
 start: for (let i = 0; i < 3; i++) {
   let answerLastFilm = prompt(`What the last movie have you watched?`);
-  let count = 0;
+  let tryCount = 1;
 
   while (!answerLastFilm || answerLastFilm.length > 50) {
-    answerLastFilm = prompt(`Repeat: What the last movie have you watched?`);
-    count++;
+    answerLastFilm = prompt(
+      `Please, fill out this field correctly! \n${tryCount} Try of 3 \nWhat the last movie have you watched?`
+    );
+    tryCount++;
 
-    if (count >= 3) {
-      alert(`Begin from Start!`);
+    if (tryCount > 3) {
+      alert(`Please, fill out fields correctly!`);
       break start;
     }
   }
 
-  let answerRateFilm = prompt(`How do you rate this film?`);
+  let answerRateFilm = +prompt(`How do you rate this film?`);
 
   personalMovieDB.movies[answerLastFilm] = answerRateFilm;
 }
