@@ -27,6 +27,19 @@ start: for (let i = 0; i < 3; i++) {
   }
 
   let answerRateFilm = +prompt(`How do you rate this film?`);
+  tryCount = 1;
+
+  while (!answerRateFilm) {
+    answerRateFilm = +prompt(
+      `Please, fill out this field correctly! \n${tryCount} Try of 3 \nHow do you rate this film?`
+    );
+    tryCount++;
+
+    if (tryCount > 3) {
+      alert(`Please, fill out fields correctly!`);
+      break start;
+    }
+  }
 
   personalMovieDB.movies[answerLastFilm] = answerRateFilm;
 }
