@@ -12,13 +12,16 @@ const personalMovieDB = {
 
 start: for (let i = 1; i <= 3; i++) {
   let answerLastFilm = prompt(
-    `Question 1.${i} \nWhat the last movie have you watched?`
+    `Question 1.${i}
+    What the last movie have you watched?`
   );
   let tryCount = 1;
 
   while (!answerLastFilm || answerLastFilm.length > 50) {
     answerLastFilm = prompt(
-      `Please, fill out this field correctly! \n${tryCount} Try of 3 \nWhat the last movie have you watched?`
+      `Please, fill out this field correctly!
+      ${tryCount} Try of 3
+      What the last movie have you watched?`
     );
     tryCount++;
 
@@ -28,12 +31,17 @@ start: for (let i = 1; i <= 3; i++) {
     }
   }
 
-  let answerRateFilm = +prompt(`Question 2.${i} \nHow do you rate this film?`);
+  let answerRateFilm = +prompt(
+    `Question 2.${i}
+    How do you rate this film?`
+  );
   tryCount = 1;
 
   while (!answerRateFilm) {
     answerRateFilm = +prompt(
-      `Please, fill out this field correctly! \n${tryCount} Try of 3 \nHow do you rate this film?`
+      `Please, fill out this field correctly!
+      ${tryCount} Try of 3
+      How do you rate this film?`
     );
     tryCount++;
 
