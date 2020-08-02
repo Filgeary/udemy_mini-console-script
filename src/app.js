@@ -22,48 +22,17 @@ const personalMovieDB = {
   private: false,
 };
 
-start: for (let i = 1; i <= 3; i++) {
-  let answerLastFilm = prompt(
-    `Question 1.${i}
-    What the last movie have you watched?`
-  );
-  let tryCount = 1;
+for (let i = 0; i < 2; i++) {
+  const answerLastFilm = prompt(`What the last movie have you watched?`, ``);
+  const answerRateFilm = prompt(`How do you rate this film?`, ``);
 
-  while (!answerLastFilm || answerLastFilm.length > 50) {
-    answerLastFilm = prompt(
-      `Please, fill out this field correctly!
-      ${tryCount} Try of 3
-      What the last movie have you watched?`
-    );
-    tryCount++;
-
-    if (tryCount > 3) {
-      alert(`Please, fill out fields correctly!`);
-      break start;
-    }
+  if (answerLastFilm && answerLastFilm.length < 50 && answerRateFilm) {
+    personalMovieDB.movies[answerLastFilm] = answerRateFilm;
+    console.log(`done`);
+  } else {
+    console.log(`error`);
+    i--;
   }
-
-  let answerRateFilm = +prompt(
-    `Question 2.${i}
-    How do you rate this film?`
-  );
-  tryCount = 1;
-
-  while (!answerRateFilm) {
-    answerRateFilm = +prompt(
-      `Please, fill out this field correctly!
-      ${tryCount} Try of 3
-      How do you rate this film?`
-    );
-    tryCount++;
-
-    if (tryCount > 3) {
-      alert(`Please, fill out fields correctly!`);
-      break start;
-    }
-  }
-
-  personalMovieDB.movies[answerLastFilm] = answerRateFilm;
 }
 
 if (personalMovieDB.count < 10) {
