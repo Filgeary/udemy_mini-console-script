@@ -12,7 +12,14 @@
 
 P.S. Функции вызывать не обязательно*/
 
-const numberOfFilms = +prompt(`How many movies have you watched?`);
+let numberOfFilms = prompt(`How many movies have you watched?`);
+
+function getFilmsAmount() {
+  while (!numberOfFilms || !isFinite(numberOfFilms)) {
+    numberOfFilms = +prompt(`How many movies have you watched?`);
+  }
+}
+getFilmsAmount();
 
 const personalMovieDB = {
   count: numberOfFilms,
@@ -22,27 +29,33 @@ const personalMovieDB = {
   private: false,
 };
 
-for (let i = 0; i < 2; i++) {
-  const answerLastFilm = prompt(`What the last movie have you watched?`, ``);
-  const answerRateFilm = prompt(`How do you rate this film?`, ``);
+function getFilmsRatingList() {
+  for (let i = 0; i < 2; i++) {
+    const answerLastFilm = prompt(`What the last movie have you watched?`, ``);
+    const answerRateFilm = prompt(`How do you rate this film?`, ``);
 
-  if (answerLastFilm && answerLastFilm.length < 50 && answerRateFilm) {
-    personalMovieDB.movies[answerLastFilm] = answerRateFilm;
-    console.log(`done`);
-  } else {
-    console.log(`error`);
-    i--;
+    if (answerLastFilm && answerLastFilm.length < 50 && answerRateFilm) {
+      personalMovieDB.movies[answerLastFilm] = answerRateFilm;
+      console.log(`done`);
+    } else {
+      console.log(`error`);
+      i--;
+    }
   }
 }
+getFilmsRatingList();
 
-if (personalMovieDB.count < 10) {
-  alert(`You watched so few movies`);
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
-  alert(`You are ordinary person`);
-} else if (personalMovieDB.count > 30) {
-  alert(`You are a movie lover!`);
-} else {
-  alert(`ERROR`);
+function showUserRating() {
+  if (personalMovieDB.count < 10) {
+    alert(`You watched so few movies`);
+  } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+    alert(`You are ordinary person`);
+  } else if (personalMovieDB.count > 30) {
+    alert(`You are a movie lover!`);
+  } else {
+    alert(`ERROR`);
+  }
 }
+showUserRating();
 
 console.log(personalMovieDB);
