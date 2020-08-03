@@ -29,13 +29,6 @@ const personalMovieDB = {
   private: false,
 };
 
-function showMyDB() {
-  if (!personalMovieDB.private) {
-    console.log(personalMovieDB);
-  }
-}
-showMyDB();
-
 function getFilmsRatingList() {
   for (let i = 0; i < 2; i++) {
     const answerLastFilm = prompt(`What the last movie have you watched?`, ``);
@@ -52,6 +45,14 @@ function getFilmsRatingList() {
 }
 getFilmsRatingList();
 
+function getUserGenres() {
+  for (let i = 0; i < 3; i++) {
+    const favoriteUserGenre = prompt(`Your favorite genre by number ${i + 1}`);
+    personalMovieDB.genres[i] = favoriteUserGenre;
+  }
+}
+getUserGenres();
+
 function showUserRating() {
   if (personalMovieDB.count < 10) {
     alert(`You watched so few movies`);
@@ -65,12 +66,9 @@ function showUserRating() {
 }
 showUserRating();
 
-function getUserGenres() {
-  for (let i = 0; i < 3; i++) {
-    const favoriteUserGenre = prompt(`Your favorite genre by number ${i + 1}`);
-    personalMovieDB.genres[i] = favoriteUserGenre;
+function showMyDB() {
+  if (!personalMovieDB.private) {
+    console.log(personalMovieDB);
   }
 }
-getUserGenres();
-
-console.log(personalMovieDB);
+showMyDB();
