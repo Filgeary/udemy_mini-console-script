@@ -29,6 +29,13 @@ const personalMovieDB = {
   private: false,
 };
 
+function showMyDB() {
+  if (!personalMovieDB.private) {
+    console.log(personalMovieDB);
+  }
+}
+showMyDB();
+
 function getFilmsRatingList() {
   for (let i = 0; i < 2; i++) {
     const answerLastFilm = prompt(`What the last movie have you watched?`, ``);
