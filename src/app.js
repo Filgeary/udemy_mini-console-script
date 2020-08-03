@@ -65,4 +65,12 @@ function showUserRating() {
 }
 showUserRating();
 
+function getUserGenres() {
+  for (let i = 0; i < 3; i++) {
+    const favoriteUserGenre = prompt(`Your favorite genre by number ${i + 1}`);
+    personalMovieDB.genres[i] = favoriteUserGenre;
+  }
+}
+getUserGenres();
+
 console.log(personalMovieDB);
