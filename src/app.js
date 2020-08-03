@@ -1,21 +1,22 @@
 'use strict';
 
-let numberOfFilms = prompt(`How many movies have you watched?`);
-
-function getFilmsAmount() {
-  while (!numberOfFilms || !isFinite(numberOfFilms)) {
-    numberOfFilms = +prompt(`How many movies have you watched?`);
-  }
-}
-getFilmsAmount();
-
 const personalMovieDB = {
-  count: numberOfFilms,
+  count: 0,
   movies: {},
   actors: {},
   genres: [],
   private: false,
 };
+
+function getFilmsAmount() {
+  let numberOfFilms = prompt(`How many movies have you watched?`);
+
+  while (!numberOfFilms || !isFinite(numberOfFilms)) {
+    numberOfFilms = +prompt(`How many movies have you watched?`);
+  }
+  personalMovieDB.count = numberOfFilms;
+}
+getFilmsAmount();
 
 function getFilmsRatingList() {
   for (let i = 0; i < 2; i++) {
