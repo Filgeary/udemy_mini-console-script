@@ -50,8 +50,17 @@ const personalMovieDB = {
       const favoriteUserGenre = prompt(
         `Your favorite genre by number ${i + 1}`
       );
-      personalMovieDB.genres[i] = favoriteUserGenre;
+      if (favoriteUserGenre) {
+        personalMovieDB.genres[i] = favoriteUserGenre;
+        console.log(`done`);
+      } else {
+        console.log(`error`);
+        i--;
+      }
     }
+    personalMovieDB.genres.forEach((item, index) =>
+      console.log(`Favorite genre #${++index} - is ${item}`)
+    );
   },
   showUserRating() {
     if (personalMovieDB.count < 10) {
