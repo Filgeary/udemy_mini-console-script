@@ -19,7 +19,7 @@ const personalMovieDB = {
   movies: {},
   actors: {},
   genres: [],
-  private: false,
+  private: true,
   getFilmsAmount() {
     let numberOfFilms = prompt(`How many movies have you watched?`);
 
@@ -64,6 +64,13 @@ const personalMovieDB = {
       alert(`ERROR`);
     }
   },
+  toggleVisibleMyDB() {
+    if (this.private) {
+      this.private = false;
+    } else {
+      this.private = true;
+    }
+  },
   showMyDB() {
     if (!personalMovieDB.private) {
       console.log(personalMovieDB);
@@ -75,4 +82,5 @@ personalMovieDB.getFilmsAmount();
 personalMovieDB.getFilmsRatingList();
 personalMovieDB.getUserGenres();
 personalMovieDB.showUserRating();
+personalMovieDB.toggleVisibleMyDB();
 personalMovieDB.showMyDB();
