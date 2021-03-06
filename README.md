@@ -1,3 +1,3 @@
-# training-project
+# mini-training-project
 
-> JavaScript tasks & exercises by tags
+> Ask questions from user via 'prompt' and output in console via 'Object'
